@@ -1,0 +1,105 @@
+.promo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 55px;
+  padding-bottom: 20px;
+  min-height: 500px;
+  //background-image: url("../img/decor/promo-1.jpg");
+  //background-position: center;
+  //background-size: cover;
+  //background-repeat: no-repeat;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.3);
+  }
+
+  @media (min-width: $screen-xl) {
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 45px;
+    min-height: 700px;
+  }
+}
+
+.promo__video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: -1;
+}
+
+.promo__content {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  padding: 12px 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 16px;
+  width: auto;
+
+  text-align: center;
+  color: $white;
+
+  background: rgba($white, 0.19);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+
+  @media (min-width: $screen-xl) {
+    max-width: 431px;
+    width: 100%;
+    gap: 21px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 23px 30px;
+  }
+}
+
+.promo__title {
+  @include body-m-bold;
+  margin: 0;
+
+  @media (min-width: $screen-xl) {
+    @include display-s-bold;
+  }
+}
+
+.promo__desc {
+  @include body-s-regular;
+  padding: 0 20px;
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    @include body-m-regular;
+    padding: 0;
+  }
+}
+
+.promo__btn {
+  margin: 0 28px;
+
+  @media (min-width: $screen-xl) {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

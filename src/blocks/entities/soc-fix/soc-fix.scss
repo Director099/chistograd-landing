@@ -1,0 +1,103 @@
+$aspect-ratio: 45px;
+
+.soc-fix {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+
+  //z-index: 9;
+
+  transition: $time;
+
+  opacity: 1;
+  visibility: visible;
+  z-index: 9;
+
+  @media (min-width: $screen-xl) {
+    right: 25px;
+    bottom: 25px;
+  }
+}
+
+.soc-fix__list {
+  @include ul-none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.soc-fix__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $aspect-ratio;
+  height: $aspect-ratio;
+  border-radius: 50%;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 0 40px 6px rgba($black, 0.2);
+  transition: $time;
+
+  background-color: $color-main;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    fill: $white;
+  }
+
+  &--sound svg {
+    margin: 3px;
+  }
+}
+
+.soc-fix__content {
+  position: relative;
+}
+
+.soc-fix__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+  width: calc($aspect-ratio * 2);
+  height: calc($aspect-ratio * 2);
+
+  background-color: $color-main;
+}
+
+.soc-fix__pic {
+  cursor: pointer;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.soc-fix__desc {
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  text-transform: uppercase;
+  transform: translateY(-50%) translateX(30px);
+
+  padding: 10px 30px 10px 10px;
+  background-color: $color-main;
+  border-radius: 20px;
+  width: 220px;
+  color: $white;
+  z-index: -1;
+
+  span {
+    color: $color-warning;
+  }
+
+  @include body-s-bold;
+}

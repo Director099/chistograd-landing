@@ -1,0 +1,35 @@
+.statistics {
+  @include shadowCard;
+  padding: 20px 16px;
+  min-height: 167px;
+
+  @media (min-width: $screen-xl) {
+    padding: 30px 22px;
+    min-height: 163px;
+  }
+}
+
+.statistics__title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  @include display-m-bold;
+  color: $color-main;
+  margin-bottom: 6px;
+
+  @media (min-width: $screen-xl) {
+    @include display-l-bold;
+
+    svg {
+      width: 18px;
+      height: 24px;
+    }
+  }
+}
+
+.statistics__content {
+  @include body-m-regular;
+  p {
+    margin: 0;
+  }
+}

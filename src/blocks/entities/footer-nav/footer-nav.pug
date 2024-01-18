@@ -1,0 +1,10 @@
+mixin footer-nav({title, list})
+  .footer-nav(data-accordion="parent" data-single data-destroy=`(max-width: ${mediaSize.xl - 1}px)`)
+    section.footer-nav__element(data-accordion="element")
+      h3.footer-nav__name(data-accordion="button")
+        span= title
+      .footer-nav__wrap(data-accordion="content")
+        ul.footer-nav__list
+          each item in list
+            li.footer-nav__item
+              a.footer-nav__link(href="#")= item

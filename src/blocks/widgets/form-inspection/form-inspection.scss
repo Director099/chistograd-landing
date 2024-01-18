@@ -1,0 +1,80 @@
+.form-inspection {
+  position: relative;
+  background-color: $color-secondary;
+}
+
+.form-inspection__img {
+  display: none;
+  @media (min-width: $screen-xl) {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(50% + 80px);
+    object-fit: cover;
+  }
+}
+
+.form-inspection__title {
+  @include display-xs-bold;
+  margin-bottom: 10px;
+
+  @media (min-width: $screen-xl) {
+    @include display-s-medium;
+    margin-bottom: 10px;
+  }
+}
+
+.form-inspection__header {
+  @include body-m-regular;
+  margin-bottom: 31px;
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 25px;
+  }
+}
+
+.form-inspection__grid {
+  display: grid;
+  gap: 40px;
+}
+
+.form-inspection__group {
+  display: grid;
+  gap: 30px;
+}
+
+.form-inspection__content {
+  padding: 30px 0;
+  color: $white;
+
+  @media (min-width: $screen-xl) {
+    max-width: 440px;
+    width: 100%;
+    margin-left: auto;
+    padding: 60px 0;
+  }
+}
+
+.form-inspection__input {
+  .field-text__input {
+    padding: 16px 30px;
+    border-color: $color-main;
+  }
+
+  @media (min-width: $screen-xl) {
+    .field-text__name {
+      padding-left: 30px;
+    }
+  }
+}
+
+.form-inspection__btn {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

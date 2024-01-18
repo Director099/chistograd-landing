@@ -1,0 +1,8 @@
+mixin product({title, desc, img})
+  section.product&attributes(attributes)
+    .product__img
+      img(src=img alt=title)
+    .product__content
+      h3.product__title= title
+      .product__desc
+        p= desc

@@ -1,0 +1,156 @@
+.tasks {
+  position: relative;
+  background-color: $color-secondary;
+
+  .swiper-pagination {
+    bottom: 12px;
+    @media (min-width: $screen-xl) {
+      bottom: 26px;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    background-color: transparent;
+
+    .swiper-pagination-bullet {
+      background-color: $white;
+      width: 14px;
+      height: 14px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $color-main;
+    }
+  }
+}
+
+.task__wrap-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.3);
+  }
+
+  @media (min-width: $screen-xl) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
+}
+
+.task__picture {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.tasks__wrap-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 33px;
+
+  @media (min-width: $screen-xl) {
+    min-height: 700px;
+    padding-bottom: 63px;
+  }
+}
+
+.tasks__list {
+  position: relative;
+  z-index: 1;
+
+  counter-reset: count;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include ul-none;
+  @include body-s-bold;
+  border-radius: 16px;
+  background: rgba($white, 0.3);
+  backdrop-filter: blur(10px);
+  color: $white;
+
+  padding: 14px 20px;
+  margin-top: -41px;
+
+  @media (min-width: $screen-xl) {
+    @include body-l-medium;
+    margin: 0;
+    padding: 28px 42px;
+    max-width: 766px;
+    gap: 20px;
+  }
+}
+
+
+.tasks__group:has(p) .tasks__title::after {
+  content: attr(data-dots);
+  display: inline-block;
+
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
+}
+
+.tasks__group--complete .tasks__value {
+  display: block;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  @media (min-width: $screen-xl) {
+    display: inline;
+  }
+}
+
+.tasks__title {
+  @include body-s-bold;
+
+  @media (min-width: $screen-xl) {
+    @include body-l-medium;
+  }
+}
+
+.tasks__value {
+  display: inline;
+  margin: 0;
+  @include body-s-light;
+
+  @media (min-width: $screen-xl) {
+    @include body-l-medium;
+  }
+}
+
+.tasks__item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+
+  @media (min-width: $screen-xl) {
+    &::before {
+      counter-increment: count;
+      content: counter(count);
+    }
+  }
+}

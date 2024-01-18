@@ -1,0 +1,5 @@
+mixin rev-img(img)
+  - const hrefValue = hasElement(img, 'video') ? "https://youtu.be/atllJv7L8Dw" : `img/content/review-${img}.jpg`;
+  - const addClass = hasElement(img, 'video') && 'rev-img--video';
+  a.rev-img&attributes(attributes)(href=hrefValue data-fancybox="" class=addClass)
+    img(src=`img/content/review-${img}.jpg`, alt="Благодарность")

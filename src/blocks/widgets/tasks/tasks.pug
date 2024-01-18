@@ -1,0 +1,39 @@
+-
+  const listTask = [
+    {
+      title: 'Термальный комплекс',
+      value: ''
+    },
+    {
+      title: 'Площадь объекта',
+      value: '155 м2'
+    },
+    {
+      title: 'Зайдествовано',
+      value: '4 клинера и 2 ответственных менеджера'
+    },
+    {
+      title: 'Выполнено',
+      value: 'обучение штатных сотрудников. Предоставлен персональный куратор от “Чистограда”, который оперативно найдет сотрудника',
+      classGroup: 'tasks__group--complete'
+    },
+  ]
+
+mixin tasks
+  .tasks&attributes(attributes)
+    +swiper({})(data-slider-view="1")
+      each item in [1, 1]
+        .swiper-slide
+          .task__wrap-link(data-src="video/bg-chistograd.mp4" data-fancybox="" )
+            video.task__picture(src="video/bg-chistograd.mp4" poster="img/content/task-1.jpg", autoplay muted loop)
+          .tasks__wrap-container
+            .container
+              ol.tasks__list
+                each item in listTask
+                  li.tasks__item
+                    .tasks__group(class=item.classGroup)
+                      strong.tasks__title(data-dots=":")= item.title
+                      if (!!item.value)
+                        p.tasks__value= item.value
+
+

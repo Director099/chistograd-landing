@@ -1,0 +1,11 @@
+mixin block-info
+  .block-info&attributes(attributes)
+    .container.container--xl-ident
+      .grid-tpl-1.grid-tpl-xl-2.block-info__grid
+        .block-info__column-left
+          +logo("index.html").block-info__logo
+            img(src="img/content/logo-chistograd.png", alt="«Чистоград» — клининговая компания")
+          +contacts.block-info__contacts
+        .block-info__column-right
+          +quest
+      a.block-info__private-politicy(href="#" target="_blank") Политика конфиденциальности

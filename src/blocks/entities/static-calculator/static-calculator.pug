@@ -1,0 +1,51 @@
+-
+  const stepsLine = [
+    {
+      addTitle: null,
+      value: "72,2"
+    },
+    {
+      addTitle: "Сейчас",
+      value: "130"
+    },
+    {
+      addTitle: null,
+      value: "260"
+    },
+    {
+      addTitle: null,
+      value: "500"
+    },
+    {
+      addTitle: null,
+      value: "1"
+    },
+    {
+      addTitle: "Цель",
+      value: "1,5"
+    },
+  ]
+
+  const currentClass = (elem) => hasElement(elem, 1) && 'static-calculator__step--current';
+  const lastElement = (elem) => hasElement(stepsLine.length - 1, elem);
+  const currentTarget = (elem) => lastElement(elem) && 'static-calculator__step--target';
+
+mixin static-calculator
+  .static-calculator
+    .static-calculator__goal-stages
+      each item, i in stepsLine
+        .static-calculator__step(class=[currentClass(i), currentTarget(i)])
+          .static-calculator__step-wrap
+            if(lastElement(i))
+              svg.static-calculator__svg(width="39" height="48")
+                use(href="img/symbols.svg#icon-flag")
+            .static-calculator__content
+              if(item.addTitle)
+                strong.static-calculator__title= item.addTitle
+              span.static-calculator__value= item.value
+                span.static-calculator__hide-text млн руб
+          .static-calculator__step-line
+
+
+    .static-calculator__circle #[span.d-none.d-xl-block Сделано] 25%
+

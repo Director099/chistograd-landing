@@ -1,0 +1,30 @@
+.quest__header {
+  margin-bottom: 25px;
+  @media (min-width: $screen-xl) {
+    margin-bottom: 26.5px;
+  }
+}
+
+.quest__start {
+  align-items: flex-start;
+  gap: 20px;
+
+  @media (min-width: $screen-xl) {
+    gap: 25px 16px;
+  }
+}
+
+.quest__title {
+  @include body-m-bold;
+  margin-bottom: 11px;
+
+  @media (min-width: $screen-xl) {
+    @include body-l-medium;
+    margin-bottom: 12px;
+  }
+}
+
+.quest__signature {
+  @include body-s-light;
+  margin: 0;
+}

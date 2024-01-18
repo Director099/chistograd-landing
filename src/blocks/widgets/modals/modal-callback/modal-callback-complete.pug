@@ -1,0 +1,7 @@
+mixin modal-callback-complete
+  +modal("modal-complete").modal-callback
+    .modal-callback__grid
+      svg.modal-callback__icon(width="120" height="120")
+        use(href=`img/symbols.svg#icon-complete`)
+      h3.modal-callback__title Ваш заказ принят в обработку. #[br] Ожидайте звонок оператора!
+      button.btn.btn--main.modal-callback__btn(data-fancybox-close="") Вернутся на главную

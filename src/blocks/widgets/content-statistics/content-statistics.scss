@@ -1,0 +1,31 @@
+.content-statistics {
+  overflow: hidden;
+
+  @media (min-width: $screen-xl) {
+    overflow: visible;
+  }
+}
+
+.content-statistics__slider {
+  overflow: visible;
+
+  .swiper-pagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 12px;
+  }
+}
+
+.content-statistics__slider {
+  .swiper-wrapper {
+    max-height: 446px;
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    .swiper-slide {
+      max-width: 300px;
+    }
+  }
+}

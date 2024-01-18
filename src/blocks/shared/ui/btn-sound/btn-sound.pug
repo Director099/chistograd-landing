@@ -1,0 +1,6 @@
+mixin btn-sound()
+  button.btn-sound(type="button" data-toggle-sound-video="")&attributes(attributes)
+    svg(width="15" height="15").btn-sound__muted
+      use(href=`img/symbols.svg#icon-sound-muted`)
+    svg(width="15" height="15").btn-sound__noise
+      use(href=`img/symbols.svg#icon-sound`)

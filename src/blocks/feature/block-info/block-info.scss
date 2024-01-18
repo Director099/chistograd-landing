@@ -1,0 +1,41 @@
+.block-info {
+  background-color: $color-secondary;
+  color: $color-other;
+  padding: 30px 0 20px;
+
+  @media (min-width: $screen-xl) {
+    padding: 60px 0;
+  }
+}
+
+.block-info__grid {
+  margin-bottom: 30px;
+  gap: 28px;
+  @media (min-width: $screen-xl) {
+    align-items: flex-start;
+    gap: 110px;
+    padding-right: 48px;
+    margin-bottom: 44.5px;
+  }
+}
+
+.block-info__private-politicy {
+  @include body-s-light;
+  display: inline-block;
+  color: $color-other;
+}
+
+.block-info__column-left {
+  display: grid;
+  gap: 49px;
+}
+
+.block-info__column-right {
+  @media (min-width: $screen-xl) {
+    padding-top: 30px;
+  }
+}
+
+.block-info__logo {
+  max-width: 185px;
+}

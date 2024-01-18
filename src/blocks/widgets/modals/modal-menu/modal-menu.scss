@@ -1,0 +1,24 @@
+.modal-menu {
+  .logo {
+    max-width: 98px;
+  }
+
+  .block-info {
+    padding: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -10px;
+  }
+
+  .block-info__column-left {
+    gap: 49px;
+  }
+
+  .block-info__grid {
+    gap: 40px;
+  }
+
+  .contacts__row-message {
+    flex-direction: column;
+  }
+}

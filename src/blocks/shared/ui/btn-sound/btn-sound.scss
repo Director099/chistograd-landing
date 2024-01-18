@@ -1,0 +1,17 @@
+.btn-sound svg {
+  margin: 2px;
+}
+
+.btn-sound__noise {
+  display: none;
+}
+
+.btn-sound.active {
+  .btn-sound__muted {
+    display: none;
+  }
+
+  .btn-sound__noise {
+    display: block;
+  }
+}

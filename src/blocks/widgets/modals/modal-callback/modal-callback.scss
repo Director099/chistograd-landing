@@ -1,0 +1,60 @@
+.modal-callback {
+  .modal__content {
+    justify-content: center;
+  }
+
+  @media (min-width: $screen-xl) {
+    max-width: 527px;
+    width: 100%;
+  }
+}
+
+.modal-callback__title {
+  @include body-m-medium;
+  margin: 0;
+  text-align: center;
+  color: $white;
+
+  @media (min-width: $screen-xl) {
+    color: $black;
+  }
+}
+
+.modal-callback__grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 343px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 40px;
+
+  .field-text__input,
+  .field-checkbox__name-text {
+    color: $white;
+
+    @media (min-width: $screen-xl) {
+      color: $color-black;
+    }
+  }
+}
+
+.modal-callback__grid-group {
+  display: grid;
+  gap: 20px;
+}
+
+.modal-callback__icon {
+  display: block;
+  margin: 0 auto;
+  fill: transparent;
+}
+
+.modal-callback__btn {
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

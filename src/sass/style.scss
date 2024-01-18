@@ -1,0 +1,62 @@
+// Config
+@import "../blocks/shared/style-libs/constans/variables";
+@import "../blocks/shared/style-libs/mixins/grid-mixins";
+@import "../blocks/shared/style-libs/fonts/font-guid";
+
+@import "../blocks/shared/style-libs/fonts/fonts";
+
+@import "../blocks/shared/style-libs/global/global";
+
+@import "../blocks/shared/style-libs/grid-tpl/grid-tpl";
+@import "../blocks/shared/style-libs/display/display";
+@import "../blocks/shared/style-libs/visibility-hidden/visibility-hidden";
+@import "../blocks/shared/style-libs/mixins/mixins";
+@import "../blocks/shared/style-libs/color-messages";
+@import "../blocks/shared/style-libs/swiper-pagination-custom";
+@import "../blocks/shared/style-libs/fancybox-custom";
+
+@import "../blocks/shared/ui/container/container";
+@import "../blocks/shared/ui/btn/btn";
+@import "../blocks/shared/ui/btn-sound/btn-sound";
+@import "../blocks/shared/ui/page/page";
+@import "../blocks/shared/ui/logo/logo";
+@import "../blocks/shared/ui/form/form";
+@import "../blocks/shared/ui/accordion/accordion";
+@import "../blocks/shared/ui/burger/burger";
+@import "../blocks/shared/ui/field-text/field-text";
+@import "../blocks/shared/ui/field-checkbox/field-checkbox";
+@import "../blocks/shared/ui/field-radio/field-radio";
+@import "../blocks/shared/ui/modal/modal";
+
+@import "../blocks/entities/footer-nav/footer-nav";
+@import "../blocks/entities/contacts/contacts";
+@import "../blocks/entities/quest/quest";
+@import "../blocks/entities/product/product";
+@import "../blocks/entities/rev-img/rev-img";
+@import "../blocks/entities/static-calculator/static-calculator";
+@import "../blocks/entities/statistics/statistics";
+@import "../blocks/entities/soc-fix/soc-fix";
+
+@import "../blocks/feature/block-info/block-info";
+
+@import "../blocks/widgets/block-type/block-type";
+@import "../blocks/widgets/page-header/page-header";
+@import "../blocks/widgets/page-footer/page-footer";
+@import "../blocks/widgets/form-inspection/form-inspection";
+@import "../blocks/widgets/content-statistics/content-statistics";
+@import "../blocks/widgets/tasks/tasks";
+@import "../blocks/widgets/promo/promo";
+@import "../blocks/widgets/order-page/order-page";
+
+@import "../blocks/widgets/modals/modal-menu/modal-menu";
+@import "../blocks/widgets/modals/modal-callback/modal-callback";
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (min-width: $screen-xl) {
+    gap: 80px;
+  }
+}

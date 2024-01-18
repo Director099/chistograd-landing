@@ -1,0 +1,31 @@
+mixin contacts
+  .contacts&attributes(attributes)
+    .grid-tpl-1.grid-tpl-xl-12.contacts__gap
+      .grid-tpl-col-xl-9
+        .contacts__column
+          each item in contactFooter
+            section.contacts__row
+              h3.contacts__name
+                svg(width="16" height="15")
+                  use(href=`img/symbols.svg#icon-${item.icon}`)
+                = item.name
+              .contacts__info
+                a.contacts__info-text(href=item.href)= item.value
+      .grid-tpl-col-xl-3
+        .contacts__row-message
+          .contacts__social-column
+            strong.contacts__name Соц. сети
+            .contacts__social
+              each item in social
+                a.contacts__social-link(aria-label=item.icon target="_blank" href=item.href)
+                  svg(width="15" height="15")
+                    use(href=`img/symbols.svg#icon-${item.icon}`)
+              a.contacts__social-link(aria-label="Instagram" target="_blank"  href="https://www.instagram.com/chistograd_ufa/")
+                include ../../..//img/sprite/icon-instagram.svg
+          .contacts__social-column
+            strong.contacts__name Messenger
+            .contacts__social
+              each item in messengers
+                a.contacts__social-link(aria-label=item.icon target="_blank" href=item.href)
+                  svg(width="15" height="15" class=item.color)
+                    use(href=`img/symbols.svg#icon-${item.icon}`)

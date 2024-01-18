@@ -1,0 +1,39 @@
+include tpl-block-type.pug
+
+-
+  const listBlockTypeInfo = [
+    {
+      title: 'Сколько денег мы помогли сэкономить нашим клиентам',
+      list: []
+    },
+    {
+      title: 'Видео отзывы наших клиентов',
+      classAdd: 'block-type--video',
+      tplSlide: 'video',
+      list: reviewsList("video")
+    },
+    {
+      title: 'Благодарственные письма',
+      classAdd: 'block-type--gratitude',
+      tplSlide: 'gratitude',
+      list: reviewsList(1)
+    },
+    {
+      title: 'Наше оборудование',
+      classAdd: 'block-type--equipment',
+      tplSlide: 'equipment',
+      list: productList,
+    }
+  ]
+
+mixin block-type
+  each item in listBlockTypeInfo
+    +tpl-block-type({
+      title: item.title,
+      list: item.list,
+      tplSlide: item.tplSlide,
+      attrs: {
+        "data-slider-view": hasElement(item.tplSlide, 'video') ? "1" : "3",
+      }
+    })(class=item.classAdd)
+      +static-calculator

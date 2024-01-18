@@ -1,0 +1,66 @@
+.page-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+  padding-top: 10px;
+  padding-bottom: 16px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.page-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.page-header__phone {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  @include body-m-regular;
+  color: $white;
+}
+
+.page-header__right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.page-header__logo {
+  display: inline-block;
+  max-width: 98px;
+
+  @media (min-width: $screen-xl) {
+    max-width: 240px;
+  }
+}
+
+.page-header__cb {
+  @media (min-width: $screen-xl) {
+    @include body-s-regular;
+    padding: 7px 13px;
+  }
+}
+
+.page-header__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @media (min-width: $screen-xl) {
+    gap: 40px;
+  }
+}
+
+.page-header__social-link svg {
+  fill: $white;
+}

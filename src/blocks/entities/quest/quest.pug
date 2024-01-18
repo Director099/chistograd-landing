@@ -1,0 +1,44 @@
+mixin quest
+  -
+    const fields = [
+      formFilelds.name,
+      formFilelds.phone,
+    ]
+  .quest
+    header.quest__header
+      h3.quest__title Задайте вопрос
+      p.quest__signature Проконсультируем в течении 5 минут
+    +form(data-form="")
+      .grid-tpl-1.grid-tpl-xl-2.quest__start
+        each item in fields
+          +field-text({
+            isTextarea: item.isTextarea,
+            attrs: {
+              placeholder: item.attrs.placeholder,
+              required: true,
+              type: item.attrs.type,
+              minlength: item.attrs.minlength,
+              min: item.attrs.min,
+              pattern: item.attrs.pattern,
+              'data-pristine-required-message': " ",
+              'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+              'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+              'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+              "data-number-only": item.attrs['data-number-only'],
+              "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+              "data-pristine-equals-message": item.attrs["data-pristine-email-message"],
+              "data-pristine-equals": item.attrs["data-pristine-equals"]
+            }
+          }).required
+        +field-checkbox([
+          {
+            title: 'Я даю свое согласие на обработку <a href="#">персональных данных</a>',
+            attrs: {
+              name: 'check0',
+              required: true,
+              'data-pristine-required-message': " ",
+              checked: "",
+            }
+          },
+        ]).required
+        button.btn.btn--main.quest__btn(data-form-btn="") Отправить

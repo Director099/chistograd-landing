@@ -1,0 +1,42 @@
+-
+  const statisticsList = [
+    {
+      title: `2 145 237
+        <svg width="18" height="24">
+          <use href="img/symbols.svg#icon-ruble"></use>
+        </svg>
+      `,
+      text: 'Сэкономили деньги клиентов выделяемые на Hr и поиск сотрудников'
+    },
+    {
+      title: '357 клинеров',
+      text: 'Работают ежедневно на объектах любой сложности'
+    },
+    {
+      title: '1 час',
+      text: 'Если сотрудник не вышел на работу, мы сразу же находим замену'
+    },
+    {
+      title: '7 дней',
+      text: 'Любой сотрудник проходит профильное обучение до выхода на объект'
+    },
+    {
+      title: '10 лет опыта',
+      text: 'Клининговая компания “Чистоград” работает с 2014 года'
+    },
+    {
+      title: '14 часов',
+      text: 'До полного запуска клининга на вашем объекте'
+    },
+  ]
+
+mixin content-statistics
+  .content-statistics
+    .container
+      +swiper({}).content-statistics__slider(data-grid-slider="")
+        each item in statisticsList
+          .swiper-slide
+            +statistics({
+              title: item.title,
+              text: item.text
+            })

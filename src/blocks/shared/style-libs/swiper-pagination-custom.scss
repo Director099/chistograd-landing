@@ -1,0 +1,21 @@
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  background-color: $color-other;
+  width: 10px;
+  height: 10px;
+
+  &.swiper-pagination-bullet-active {
+    background-color: $color-main;
+  }
+}

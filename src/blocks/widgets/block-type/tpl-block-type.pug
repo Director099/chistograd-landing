@@ -1,0 +1,29 @@
+mixin tpl-block-type({title, list, attrs, tplSlide})
+  .block-type&attributes(attributes)
+    .container
+      h2.block-type__title=title
+      .block-type__content
+        if (tplSlide)
+          +swiper({
+            paginationClass: 'd-xl-none'
+          }).block-type__slider&attributes(attrs)
+            each item, i in list
+              .swiper-slide.block-type__shadow
+                if (tplSlide === 'equipment')
+                  +product({
+                    title: item.title,
+                    desc: item.desc,
+                    img: item.img
+                  })
+                else if (tplSlide === 'gratitude')
+                  +rev-img(item)
+                else if (tplSlide === 'video')
+                  +rev-img(item)
+          button.swiper-button.swiper-button--prev.d-none.d-xl-flex(type="button" aria-label="Слайд назад")
+            svg(width="20" height="20")
+              use(href="img/symbols.svg#icon-arrow-right")
+          button.swiper-button.swiper-button--next.d-none.d-xl-flex(type="button" aria-label="Слайд вперед")
+            svg(width="20" height="20")
+              use(href="img/symbols.svg#icon-arrow-right")
+        if (!tplSlide)
+          block

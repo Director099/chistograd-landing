@@ -1,0 +1,118 @@
+.block-type {
+  overflow: hidden;
+
+  @media (min-width: $screen-xl) {
+    overflow: visible;
+  }
+}
+
+.block-type--video .block-type__shadow {
+  box-shadow: none;
+}
+
+.block-type--gratitude {
+  .swiper-slide {
+    max-width: 164px;
+    @media (min-width: $screen-xl) {
+      max-width: inherit;
+    }
+  }
+}
+
+.block-type--equipment {
+  .swiper-slide {
+    max-width: 300px;
+    @media (min-width: $screen-xl) {
+      max-width: inherit;
+    }
+  }
+}
+
+.block-type__content {
+  position: relative;
+
+  .swiper-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    background-color: $color-main;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9;
+
+    svg {
+      fill: transparent;
+    }
+
+    &[disabled] {
+      background: $color-gray;
+      backdrop-filter: blur(4px);
+    }
+
+    &--next {
+      right: -56px;
+    }
+
+    &--prev {
+      transform: rotate(180deg) translateY(50%);
+      left: -56px;
+    }
+  }
+}
+
+.block-type__slider {
+  overflow: visible;
+
+  .swiper-pagination {
+    position: static;
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 12px;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    @include sliderIdent;
+    overflow: hidden;
+  }
+}
+
+.block-type__shadow {
+  display: block;
+  @include shadowCard;
+  transition: $time;
+  overflow: hidden;
+  height: auto;
+
+  @media (min-width: $screen-xl) {
+    //TODO: Тень подумать
+    &.swiper-slide-prev,
+    &.swiper-slide-next + .swiper-slide + .swiper-slide {
+      box-shadow: 0 0 0 0 rgba($black, .1);
+    }
+  }
+}
+
+.block-type__title {
+  @include display-xs-medium;
+  color: $color-black;
+  margin-bottom: 30px;
+  max-width: 595px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 60px;
+    @include display-m-medium;
+  }
+}

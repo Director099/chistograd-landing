@@ -1,0 +1,11 @@
+mixin page-footer
+  footer.page-footer&attributes(attributes)
+    .page-footer__top
+      .container.container--xl-ident
+        .grid-tpl-1.grid-tpl-md-2.page-footer__nav
+          each item in footerNav
+            +footer-nav({
+              title: item.title,
+              list: item.list
+            })
+    +block-info()(data-watch-hidden='')

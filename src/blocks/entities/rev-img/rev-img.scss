@@ -1,0 +1,35 @@
+.rev-img {
+  display: block;
+  position: relative;
+
+  img {
+    display: block;
+  }
+}
+
+.rev-img--video {
+  img {
+    min-height: 206px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='62' viewBox='0 0 53 62' fill='none'%3E%3Cpath d='M53 31L0.499997 61.3109L0.5 0.689109L53 31Z' fill='white'/%3E%3C/svg%3E");
+
+    @media (min-width: $screen-xl) {
+      width: 53px;
+      height: 62px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+mixin page-header()
+  header.page-header&attributes(attributes)
+    .container.page-header__container
+      .page-header__row
+        .page-header__left
+          +logo("index.html").page-header__logo
+            img(src="img/content/logo-chistograd.png", alt="«Чистоград» — клининговая компания")
+        .page-header__right
+          .page-header__links.d-xl-none
+            each item in messengers
+              a.page-header__social-link(aria-label=item.icon target="_blank" href=item.href)
+                svg(width="15" height="15" class=item.color)
+                  use(href=`img/symbols.svg#icon-${item.icon}`)
+            a.page-header__social-link(href=numberPhone.href target="_blank" aria-label="Телефон")
+              svg(width="15" height="15")
+                use(xlink:href="img/symbols.svg#icon-phone-2")
+          .page-header__links.d-none.d-xl-flex
+            a.page-header__phone(href=numberPhone.href target="_blank")
+              svg(width="17" height="17")
+                use(xlink:href="img/symbols.svg#icon-phone")
+              =numberPhone.text
+            a.btn.btn--main.page-header__cb(href="#modal-cb" data-fancybox="") Заказать звонок
+          +burger("mobile-menu")(href="#mb-menu" data-fancybox="").d-xl-none

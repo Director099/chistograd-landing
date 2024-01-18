@@ -1,0 +1,14 @@
+mixin soc-fix
+  .soc-fix
+    ul.soc-fix__list
+      li.soc-fix__item
+        +btn-sound.soc-fix__link.soc-fix__link--sound
+      each item in messengers
+        li.soc-fix__item
+          a.soc-fix__link(aria-label=item.icon target="_blank" href=item.href)
+            svg(width="15" height="15")
+              use(href=`img/symbols.svg#icon-${item.icon}`)
+    .soc-fix__content
+      .soc-fix__pic
+        img(src="img/content/soc-icon-chist.jpg" alt="Закажи бесплатный выезд на объкт")
+      a.soc-fix__desc.visibility-hidden(aria-label="Раскрыть иконки соц. сетей" href="#form-inspection") Закажи #[span бесплатный выезд] на объкт

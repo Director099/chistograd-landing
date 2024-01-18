@@ -1,0 +1,11 @@
+.container {
+  @include container();
+
+  &--xl-ident {
+    @media (min-width: $screen-xl) {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+  }
+}
+
